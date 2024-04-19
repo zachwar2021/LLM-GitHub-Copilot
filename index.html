@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Max Gains</title>
+    <style>
+        body {
+            background-image: url('gym-background.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .header button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #f4a261;
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+        .content {
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Max Gains</h1>
+        <button onclick="navigate('home')">Home</button>
+        <button onclick="navigate('products')">Products</button>
+        <button onclick="navigate('about')">About</button>
+    </div>
+    <div class="content" id="content">
+        <!-- Content will be loaded here -->
+    </div>
+    <div class="footer">
+        &copy; 2022 Max Gains
+    </div>
+
+    <script>
+        function navigate(page) {
+            var content = document.getElementById('content');
+            if (page === 'home') {
+                content.innerHTML = '<h2>Welcome to Max Gains!</h2><p>Here is some information about our gym membership prices...</p>';
+            } else if (page === 'products') {
+                content.innerHTML = '<h2>Our Products</h2><p>Here is some information about our products...</p>';
+            } else if (page === 'about') {
+                content.innerHTML = '<h2>About Us</h2><p>Here is some information about us...</p>';
+            }
+        }
+
+        // Load home page content by default
+        navigate('home');
+    </script>
+</body>
+</html>
